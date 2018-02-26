@@ -168,29 +168,34 @@ public class Janela extends javax.swing.JDialog {
             int ValorEntrada = Integer.valueOf(entrada);
             String saida = "";
            int q;
-            do{
-                q = ValorEntrada / 16;
-                int r = ValorEntrada % 16;
+            do{  //300
+                q = ValorEntrada / 16;  //18
+                int r = ValorEntrada % 16; //12
                
                  
                 if( r == 10)
             r = 'A';
+                else
                 if( r == 11)
             r = 'B';
+                else
                 if( r == 12)
             r = 'C';
-                if( r == 10)
-            r = 'D';          
-                if( r == 10)
+                else
+                if( r == 13)
+            r = 'D';
+                else
+                if( r == 14)
             r = 'E';
-                if( r == 10)
+                else
+                if( r == 15)
             r = 'F';
                 
         saida = r + saida;
            ValorEntrada = q;
               System.out.println(q);
                 
-            }while(q >= 2);
+            }while(q >= 16);
         saida = q + saida;
         
            System.out.println(saida);
