@@ -129,7 +129,24 @@ public class Janela extends javax.swing.JDialog {
         //BINÁRIO -> DECIMAL 
         if (boxEntrada.getSelectedIndex() == 0 && boxSaida.getSelectedIndex() == 1) {
 
-          
+            String entrada = textEntrada.getText();
+                System.out.println(entrada);
+               // int ValorEntrada = Integer.valueOf(entrada);
+                String saida = "";
+                double fim = 0;
+                int qnt = entrada.length();
+                
+                for (int a = qnt; a > 0; a--) {
+            System.out.println("Posicao: "+a+" é "+entrada.charAt(a));
+            char letraC = entrada.charAt(a);
+            int letraI = Integer.valueOf(letraC);
+            
+            if(letraI == 1){
+                 fim = (letraI ^ a) + fim;
+            }
+            else
+                fim = 0 + fim;
+        }
         }
 
         //BINÁRIO -> HEXADECIMAL 
@@ -167,30 +184,37 @@ public class Janela extends javax.swing.JDialog {
             System.out.println(entrada);
             int ValorEntrada = Integer.valueOf(entrada);
             String saida = "";
+            char letra;
            int q;
             do{  //300
                 q = ValorEntrada / 16;  //18
                 int r = ValorEntrada % 16; //12
                
                  
-                if( r == 10)
-            r = 'A';
+                if( r == 10){
+            letra = 'A';
+                saida = letra + saida;}
                 else
-                if( r == 11)
-            r = 'B';
+                if( r == 11){
+            letra = 'B';
+            saida = letra + saida;}
                 else
-                if( r == 12)
-            r = 'C';
+                if( r == 12){
+            letra = 'C';
+            saida = letra + saida;}
                 else
-                if( r == 13)
-            r = 'D';
+                if( r == 13){
+            letra = 'D';
+            saida = letra + saida;}
                 else
-                if( r == 14)
-            r = 'E';
+                if( r == 14){
+            letra = 'E';
+            saida = letra + saida;}
                 else
-                if( r == 15)
-            r = 'F';
-                
+                if( r == 15){
+            letra = 'F';
+            saida = letra + saida;}
+               else
         saida = r + saida;
            ValorEntrada = q;
               System.out.println(q);
